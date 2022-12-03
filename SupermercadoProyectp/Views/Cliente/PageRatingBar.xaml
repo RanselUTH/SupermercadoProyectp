@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:fRating="clr-namespace:Rating;assembly=Rating"
+             x:Class="SupermercadoProyectp.Views.Cliente.PageRatingBar">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     WidthRequest="250">
+            <Label Text="Calificar Pedido" VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
+
+            <fRating:RatingBar x:Name="calificacion"
+                SelectedStarValue="3"
+                ImageHeight="30"
+                ImageWidth="30"
+                HorizontalOptions="Center"
+                FlowDirection="LeftToRight"
+                EmptyStarImage="estrellasvacias"
+                FillStarImage="strellamarilla"></fRating:RatingBar>
+
+            <Entry Placeholder="Escribe Tu Valoracion" 
+                   x:Name="txtvaloracion" ></Entry>
+
+
+            <Button Text="Calificar"
+                    x:Name="ShowButton"
+                    Clicked="ShowButton_Clicked">
+
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

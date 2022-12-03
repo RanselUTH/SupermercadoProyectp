@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.PageAdminMenu">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="CERRAR SESION" x:Name="tlbcerrar_sesion"  Clicked="tlbcerrar_sesion_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="60,130,30,-900" Spacing="80">
+
+    <Image Source="https://cdn-icons-png.flaticon.com/512/579/579330.png"
+                   HeightRequest="50" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="lista_productos" Tapped="lista_productos_Tapped">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Source="https://cdn-icons-png.flaticon.com/512/190/190681.png"
+                   HeightRequest="50" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="crear_repartidor" Tapped="crear_repartidor_Tapped">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Source="https://cdn-icons-png.flaticon.com/512/305/305100.png" 
+                   HeightRequest="50" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="lista_pedidos" Tapped="lista_pedidos_Tapped">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+        <Image Source="https://cdn-icons-png.flaticon.com/512/1205/1205498.png"
+                   HeightRequest="50">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="crear_producto" Tapped="crear_producto_Tapped">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+    </StackLayout>
+   
+</ContentPage>

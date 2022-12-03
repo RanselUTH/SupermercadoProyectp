@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.PageClienteMenu"
+              xmlns:Convertidor="clr-namespace:SupermercadoProyectp.Convert">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        
+
+        <Grid>
+
+            <StackLayout BackgroundColor="White">
+                <StackLayout Orientation="Horizontal"
+                         Margin="0,0,0,23">
+
+                    <Label Text="SUPER MAERCADO EL ECONOMICO"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       TextColor="Orange"
+                       VerticalOptions="Center"
+                       FontSize="20" />
+                    <Frame HasShadow="False"
+                       CornerRadius="60"
+                       Padding="15">
+                        <Image Source="user.png"
+                           HeightRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="perfil_usuario" Tapped="perfil_usuario_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                </StackLayout>
+                <Frame CornerRadius="50"
+                   HasShadow="False"
+                   Padding="10"
+                   BorderColor="Black"
+                   Margin="0,0,0,23">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="lupa.png"
+                           HeightRequest="22"
+                           Margin="6,0,0,0" />
+                        <Label Text="Buscar..."
+                           VerticalOptions="Center"
+                           
+                           FontAttributes="Bold"
+                           
+                           HorizontalOptions="FillAndExpand" />
+                        <Frame CornerRadius="50"
+                           HasShadow="False"
+                           Padding="10">
+                            <Frame.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="Orange"
+                                              Offset="0.5" />
+                                    <GradientStop Color="Orange"
+                                              Offset="0.5" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Filtro"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   Margin="0,0,15,0" />
+                                <Image Source="filtrar.png"
+                                   HeightRequest="19" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+               
+                <StackLayout Orientation="Horizontal" Spacing="80" Margin="40,870">
+                  
+
+                        <Image Source="home.png" 
+                   HeightRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="inicio" Tapped="inicio_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                      
+
+
+                        <Image Source="bolsa_compra"
+                    HeightRequest="40" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="bolsa_de_compra" Tapped="bolsa_de_compra_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+
+                        <Image Source="lista_pedidos.png"
+                   HeightRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="pedidos" Tapped="pedidos_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="cerrar_sesion.png"
+                   HeightRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="salir" Tapped="salir_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </StackLayout>
+            </StackLayout>
+
+        </Grid>
+            
+    </ContentPage.Content>
+</ContentPage>

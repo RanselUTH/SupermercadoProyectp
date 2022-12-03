@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.Views.Cliente.PageProductos"
+             xmlns:Convertidor="clr-namespace:SupermercadoProyectp.Convert"
+             Title="PRODUCTOS">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.ToolbarItems> 
+        <ToolbarItem Text="Cerrar Sesion"
+                     x:Name="Addtolbaritem1"
+                     Clicked="Addtolbaritem_Clicked">
+
+        </ToolbarItem>
+        <ToolbarItem Text="Carrito"
+                     x:Name="Addtolbaritem"
+                     Clicked="Addtolbaritem_Clicked_1">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+
+        <Grid>
+
+            <StackLayout BackgroundColor="White">
+                <StackLayout Orientation="Horizontal"
+                         Margin="0,0,0,23">
+
+                    <Label Text="SUPERMERCADO EL ECONOMICO"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       TextColor="Orange"
+                       VerticalOptions="Center"
+                       FontSize="28" />
+                    <Frame HasShadow="False"
+                       CornerRadius="60"
+                       Padding="15">
+                        <Image Source="user.png"
+                           HeightRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="perfil_usuario" Tapped="perfil_usuario_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="50"
+                           HasShadow="False"
+                           Padding="10">
+                        <Frame.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Orange"
+                                              Offset="0.5" />
+                                <GradientStop Color="Orange"
+                                              Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Horizontal">
+                            <SearchBar Placeholder="Buscar..."
+                                       FontSize="20"
+                                          x:Name="buscarlbl"
+                                       PlaceholderColor="White"
+                                           TextChanged="buscarlbl_TextChanged"
+                                          SearchButtonPressed="buscarlbl_SearchButtonPressed">
+                            </SearchBar>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+
+                <CollectionView x:Name="cvListaProductos" ItemsSource="{Binding productos}" SelectionMode="Single" VerticalScrollBarVisibility="Never" SelectionChanged="cvListaProductos_SelectionChanged_1">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="6" HorizontalItemSpacing="6" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="5" CornerRadius="5" BorderColor="Orange" BackgroundColor="White"  HasShadow="True">
+                        <Grid Margin="0" Padding="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="160"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0"  Source="{Binding Foto, Converter={StaticResource ByteToImage}}" HeightRequest="150" WidthRequest="110" />
+                            <StackLayout Grid.Row="1">
+                                <Label Text="{Binding NombreProducto}" TextColor="Black" LineBreakMode="NoWrap" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="2">
+                                <Label Text="{Binding Descripcion}" TextColor="Black"/>
+                            </StackLayout>
+
+
+                        </Grid>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

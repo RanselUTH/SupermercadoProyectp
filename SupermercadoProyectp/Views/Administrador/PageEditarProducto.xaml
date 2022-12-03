@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.Views.Administrador.PageEditarProducto"
+             Visual="Material"
+             Title="ACTULIZAR PRODUCTO"
+             BackgroundColor="White">
+    
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="420">
+
+
+
+
+            <Label Text="Actualizar Producto"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                   TextColor="Orange"
+                   FontSize="48"
+                   FontAttributes="Bold"
+                   />
+
+            <Image x:Name="ProductoImg"
+                   HeightRequest="400" WidthRequest="200" BackgroundColor="Black">
+                <Image.GestureRecognizers>
+
+                    <TapGestureRecognizer x:Name="ImagTap"
+                                          Tapped="ImagTap_Tapped"/>
+
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Entry x:Name="txtid" IsVisible="false"></Entry>
+
+            <Entry Placeholder="Ingrese Nombre Del Producto" BackgroundColor="White" PlaceholderColor="Orange"
+                   x:Name="txtnombreproducto"></Entry>
+            <Entry Placeholder="Ingrese Cantidad Del Producto" BackgroundColor="White" PlaceholderColor="Orange"
+                   x:Name="txtcantidad"></Entry>
+            <Entry Placeholder="Ingrese Precio Del Producto" BackgroundColor="White" PlaceholderColor="Orange"
+                   x:Name="txtprecio"></Entry>
+            <Entry Placeholder="Ingrese Descripcion Del Producto" BackgroundColor="White" PlaceholderColor="Orange"
+                   x:Name="txtdescription"></Entry>
+
+
+            <Button Text="Actualizar" x:Name="ButtonEdit" BackgroundColor="Orange" CornerRadius="30"
+                Clicked="ButtonEdit_Clicked"></Button>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

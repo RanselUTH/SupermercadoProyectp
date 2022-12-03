@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Delivery.Vistas.Menuprincipal.Piepagina"
+             xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows">
+    <Grid HeightRequest="80"
+          BackgroundColor="White">
+        <sombras:Shadows CornerRadius="50"
+                         Shades="{sombras:SingleShade   Offset='0,10' ,Opacity=0.6,Color=#8765FF,BlurRadius=30}"
+                         >
+        </sombras:Shadows>
+        <StackLayout Orientation="Horizontal"
+                     Margin="40,0"
+                     Spacing="80">
+
+
+
+
+            <Image Source="home.png" 
+                   HeightRequest="35">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="inicio" Tapped="inicio_Tapped">
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            
+
+
+            <Image Source="bolsa_compra"
+                    HeightRequest="35" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="bolsa_de_compra" Tapped="bolsa_de_compra_Tapped">
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            <Image Source="lista_pedidos.png"
+                   HeightRequest="35">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="pedidos" Tapped="pedidos_Tapped">
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="salir.jpg"
+                   HeightRequest="45">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="salir" Tapped="salir_Tapped">
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </Grid>
+</ContentView>

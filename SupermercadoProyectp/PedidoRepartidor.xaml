@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.PedidoRepartidor"
+             Title="DETALLE PEDIDO"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="50">
+                <StackLayout>
+                    <Label x:Name="lblTitulo" Text="DETALLE DEL PEDIDO" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="20"/>
+                    <Label x:Name="lblPedido" HorizontalOptions="Start" TextColor="red" FontSize="20" />
+                    <Label x:Name="lblCliente" HorizontalOptions="Start" FontSize="20" />
+                    <Label x:Name="lblDireccion" HorizontalOptions="Start" FontSize="20" />
+                    <Label x:Name="lblFecha" HorizontalOptions="Start" TextColor="red" FontSize="20" />
+                </StackLayout>
+            </Frame>
+            <ListView x:Name="lsvDetalle" Margin="20" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="20,5,20,0">
+
+                                <Label Text="Producto" TextColor="Orange" FontSize="24" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Margin="5,0,0,0"/>
+                                <Label Text="Cantidad" TextColor="Orange" FontSize="24" HorizontalOptions="Center"   Grid.Column="0" Grid.Row="0" Margin="5,0,0,0"/>
+                                <Label Text="Precio $" TextColor="Orange" FontSize="24" HorizontalOptions="End" Grid.Column="0" Grid.Row="0" Margin="5,0,0,0"/>
+
+                                <Label Text="{Binding NombreProducto}" FontSize="20" TextColor="DarkSlateGray" Grid.Column="0" Grid.Row="1" Margin="5,0,0,0" HorizontalOptions="Start" />
+                                <Label Text="{Binding Cantidad}" FontSize="20"  TextColor="DarkSlateGray" Grid.Column="0" Grid.Row="1" Margin="5,0,0,0" HorizontalOptions="Center" />
+                                <Label Text="{Binding TotalProducto}" FontSize="20" TextColor="DarkSlateGray" Grid.Column="0" Grid.Row="1" Margin="5,0,0,0" HorizontalOptions="End" />
+
+                            </Grid>
+                                
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label x:Name="lblTotal" HorizontalOptions="End" FontSize="30" Margin="20" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnTomar"
+                        Text="TOMAR PEDIDO"
+                        Clicked="btnTomar_Clicked"
+                        CornerRadius="20" 
+                        HorizontalOptions="FillAndExpand" />
+                
+                <Button x:Name="btnEntregar"
+                        Text="ENTREGAR PERDIDO"
+                        Clicked="btnEntregar_Clicked"
+                        CornerRadius="20" 
+                       HorizontalOptions="FillAndExpand"/>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnMapa" 
+                        Text="IR AL MAPA"
+                        Clicked="btnMapa_Clicked"
+                        CornerRadius="20"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Orange" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

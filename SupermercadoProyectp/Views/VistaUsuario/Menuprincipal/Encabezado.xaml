@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Delivery.Vistas.Menuprincipal.Encabezado"
+             xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows">
+
+    <Grid>
+        
+        <StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,0,0,23">
+                
+                <Label Text="SUPER MAERCADO EL ECONOMICO"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       TextColor="Orange"
+                       VerticalOptions="Center"
+                       FontSize="20" />
+                <Frame HasShadow="False"
+                       CornerRadius="60"
+                       Padding="15">
+                    <Image Source="user.png"
+                           HeightRequest="30">
+                        <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="perfil_usuario" Tapped="perfil_usuario_Tapped">
+                        </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </StackLayout>
+            <Frame CornerRadius="50"
+                   HasShadow="False"
+                   Padding="10"
+                   Margin="0,0,0,23">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="lupa.png"
+                           HeightRequest="22"
+                           Margin="6,0,0,0" />
+                    <Label Text="Buscar..."
+                           VerticalOptions="Center"
+                           TextColor="#D1D4DF"
+                           FontAttributes="Bold"
+                           HorizontalOptions="FillAndExpand" />
+                    <Frame CornerRadius="50"
+                           HasShadow="False"
+                           Padding="10">
+                        <Frame.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Orange"
+                                              Offset="0.5" />
+                                <GradientStop Color="Orange"
+                                              Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Filtro"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   Margin="0,0,15,0" />
+                            <Image Source="filtrar.png"
+                                   HeightRequest="19" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentView>

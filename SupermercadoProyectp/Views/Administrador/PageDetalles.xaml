@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.Views.Administrador.PageDetalles">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Informacion Del Producto"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center"
+                  FontSize="Large"/>
+
+            <Image x:Name="ProductoImg"
+                   HeightRequest="150" BackgroundColor="White">
+               
+            </Image>
+
+            <Label x:Name="LabelName"
+                   TextColor="Black"
+                   FontSize="Medium"/>
+            <Label x:Name="LabelPrecio"
+                   TextColor="Black"
+                   FontSize="Medium"/>
+            <Label x:Name="LabelDescripcion"
+                   TextColor="Black"
+                   FontSize="Medium"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

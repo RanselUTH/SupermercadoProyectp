@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.Views.Administrador.PageCrearRepartidor"
+             Visual="Material"
+             Title="CREAR REPARTIDOR">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="1200"
+            WidthRequest="600">
+            <Label Text="Registrar Repartidor"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                   FontSize="48"
+                   FontAttributes="Bold"
+                   Margin="50"
+                   TextColor="Orange"/>
+
+            <Entry Placeholder="Nombre"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   x:Name="txtnombree"/>
+
+            <Entry Placeholder="Email" Keyboard="Email"
+                    PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   x:Name="txtemaile"/>
+
+            <Entry Placeholder="Direccion"
+                    PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   x:Name="txtdireccion"/>
+
+            <Entry Placeholder="Telefono" Keyboard="Numeric"
+                    PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   x:Name="txttelefono"/>
+
+            <Entry Placeholder="Clave"
+                   IsPassword="True"
+                    PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   x:Name="txtclavee"/>
+
+            <Entry IsPassword="True" 
+                   Placeholder="Confirmar Clavee"
+                    PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   x:Name="txtconfirmclavee"/>
+            
+
+            <Button Text="Registrar Repartidor"
+                    BackgroundColor="Orange"
+                    TextColor="White"
+                    Margin="20"
+                    CornerRadius="30"
+                    x:Name="Buttonregistro"
+                    Clicked="Buttonregistro_Clicked"/>
+
+
+
+            <StackLayout Orientation="Horizontal" Spacing="90" Margin="50,430">
+                <Image Source="https://cdn-icons-png.flaticon.com/512/579/579330.png"
+                   HeightRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="lista_productos" Tapped="lista_productos_Tapped">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="https://cdn-icons-png.flaticon.com/512/190/190681.png"
+                   HeightRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="crear_repartidor" Tapped="crear_repartidor_Tapped">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="https://cdn-icons-png.flaticon.com/512/305/305100.png" 
+                   HeightRequest="50" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="lista_pedidos" Tapped="lista_pedidos_Tapped">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+
+                <Image Source="https://cdn-icons-png.flaticon.com/512/1205/1205498.png"
+                   HeightRequest="50">
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="crear_producto" Tapped="crear_producto_Tapped">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

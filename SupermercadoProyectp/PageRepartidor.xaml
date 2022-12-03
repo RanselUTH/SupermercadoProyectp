@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.PageRepartidor"
+             Title="Menu Repartidor">
+    <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="140,140,30,-900" Spacing="200">
+        <Image Source="ver_pedidos.png" 
+                   HeightRequest="50">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="ver_pedido" Tapped="ver_pedido_Tapped">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+        <Image Source="cerrar_sesion.png"
+                   HeightRequest="50">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="salir" Tapped="salir_Tapped">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+    </StackLayout>
+
+
+</ContentPage>

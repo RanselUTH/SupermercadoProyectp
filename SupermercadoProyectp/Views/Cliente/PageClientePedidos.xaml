@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupermercadoProyectp.Views.Cliente.PageClientePedidos">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label x:Name="lblTitulo" Text="Pedidos pendientes" HorizontalTextAlignment="Center" TextColor="White" FontSize="24"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnTomados" 
+                        Text="PEDIDOS TOMADOS"
+                        Clicked="btnTomados_Clicked"
+                        CornerRadius="40" 
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Gray" />
+
+                <Button x:Name="btnDisponibles"
+                        Text="PEDIDOS DISPONIBLES"
+                        Clicked="btnDisponibles_Clicked"
+                        CornerRadius="40" 
+                        HorizontalOptions="FillAndExpand" 
+                        BackgroundColor="Orange" />
+
+            </StackLayout>
+            <Grid Margin="30,30,100,-20">
+
+                <Label Text="ID" TextColor="Orange" FontSize="24" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Margin="-10,-15,0,0"/>
+                <Label Text="Repartidor" TextColor="Orange" FontSize="24" HorizontalOptions="Start"   Grid.Column="1" Grid.Row="0" Margin="-60,-15,5,0"/>
+                <Label Text="Dirección" TextColor="Orange"  FontSize="24" HorizontalOptions="End" Grid.Column="2" Grid.Row="0" Margin="-100,-15,40,0"/>
+                <Label Text="Fecha" TextColor="Orange"  FontSize="24" HorizontalOptions="End" Grid.Column="3" Grid.Row="0" Margin="10,-15,-30,0"/>
+
+            </Grid>
+            <ListView x:Name="lsvPedidos" Margin="20" RowHeight="60" VerticalOptions="Center" ItemSelected="lsvPedidos_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  Orientation="Vertical"  Margin="1">
+
+
+                                <Grid Margin="30,25,100,5">
+
+                                    <Label Text="{Binding IdPedido}" TextColor="Red" FontSize="16" Grid.Column="0" Grid.Row="0" Margin="-30,-30,0,0" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Label Text="{Binding NombreCliente}" TextColor="Black" FontSize="16" Grid.Column="1" Grid.Row="0" Margin="-30,-30,-50,0" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Label Text="{Binding Direccion}" TextColor="Black" FontSize="16" Grid.Column="3" Grid.Row="0" Margin="-30,-30,-100,0" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Label Text="{Binding Fecha}" TextColor="Red" FontSize="16" Grid.Column="5" Grid.Row="0" Margin="50,-30,-90,0" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Label Text="----------------" TextColor="Orange" FontSize="16" Grid.Column="0" Grid.Row="0" Margin="-30,5,0,0" HorizontalOptions="Start" />
+                                    <Label Text="---------------------------" TextColor="Orange" FontSize="16" Grid.Column="1" Grid.Row="0" Margin="-10,5,-90,0" HorizontalOptions="Start" />
+                                    <Label Text="--------------------------" TextColor="Orange" FontSize="16" Grid.Column="3" Grid.Row="0" Margin="5,5,-130,0" HorizontalOptions="Start" />
+                                    <Label Text="--------------------------" TextColor="Orange" FontSize="16" Grid.Column="5" Grid.Row="0" Margin="10,5,-95,0" HorizontalOptions="Start" />
+
+                                </Grid>
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
